@@ -1,0 +1,188 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunny Studio — Simple HTML Website</title>
+  <style>
+    /* Basic reset */
+    * {box-sizing: border-box; margin:0; padding:0}
+    html,body {height:100%}
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.4;
+      color:#182026;
+      background: linear-gradient(180deg,#f7fbff 0%, #ffffff 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Page container */
+    .container {max-width:1100px; margin:0 auto; padding:32px;}
+
+    /* Header */
+    header {
+      display:flex; align-items:center; justify-content:space-between;
+      gap:20px; padding:12px 0;
+    }
+    .brand {display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;}
+    .logo {
+      width:44px; height:44px; border-radius:10px; display:inline-grid;
+      place-items:center; font-weight:700; background:linear-gradient(135deg,#ffb545,#ff7a59);
+      color:white; box-shadow:0 6px 18px rgba(255,122,89,0.12);
+    }
+    nav a {margin-left:18px; text-decoration:none; color: #27527a; font-weight:600}
+    .cta {background:#27527a;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero {
+      display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:center; margin-top:28px;
+    }
+    .hero h1 {font-size:2.2rem; margin-bottom:8px;}
+    .hero p {color:#3b556a; margin-bottom:16px;}
+    .hero .actions {display:flex; gap:12px;}
+    .card {
+      background:linear-gradient(180deg,#fff, #fcfcff);
+      border-radius:14px; padding:18px; box-shadow:0 6px 20px rgba(16,24,40,0.06);
+    }
+
+    /* Features */
+    .features {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-top:24px;}
+    .feature {padding:16px;border-radius:10px; background:rgba(39,82,122,0.04)}
+
+    /* Gallery */
+    .gallery {display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:18px;}
+    .gallery img {width:100%; border-radius:8px; display:block; height:140px; object-fit:cover;}
+
+    /* Footer / Form */
+    footer {margin-top:28px; padding:18px 0; color:#5b6b76; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap}
+    form {display:grid; grid-template-columns:1fr 120px; gap:10px; align-items:center}
+    input[type="text"], input[type="email"] {
+      padding:10px 12px; border-radius:8px; border:1px solid #dbe7ef; background:white;
+    }
+    button[type="submit"] {padding:10px 14px; border-radius:8px; border:0; background:#ff7a59; color:#fff; font-weight:700; cursor:pointer}
+    small {color:#8b9aa6}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero {grid-template-columns:1fr; text-align:center}
+      nav {display:none}
+      form {grid-template-columns:1fr}
+      .gallery {grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:480px){
+      .gallery img {height:110px}
+      .logo {width:40px;height:40px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">SS</div>
+        <div>
+          <div style="font-weight:800">Sunny Studio</div>
+          <small style="color:#6b7f8f">Design • Build • Launch</small>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Beautiful, minimal websites — built fast.</h1>
+          <p>Create a modern one-page site, portfolio, or landing page without the fuss. This template is responsive, accessible, and easy to customize.</p>
+          <div class="actions">
+            <a class="cta" href="#contact">Get in touch</a>
+            <a style="padding:8px 12px;border-radius:8px;background:#eef6fb;text-decoration:none;color:#27527a;font-weight:700" href="#features">Explore features</a>
+          </div>
+
+          <div class="features" id="features" style="margin-top:18px">
+            <div class="feature card">
+              <h4>Fast to launch</h4>
+              <p style="font-size:0.95rem;color:#3b556a">Single file, no build step. Edit text and images, then open in a browser.</p>
+            </div>
+            <div class="feature card">
+              <h4>Responsive</h4>
+              <p style="font-size:0.95rem;color:#3b556a">Looks great on phones, tablets, and desktops.</p>
+            </div>
+            <div class="feature card">
+              <h4>Accessible</h4>
+              <p style="font-size:0.95rem;color:#3b556a">Semantic HTML and readable contrast for better usability.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card" aria-labelledby="about-title">
+          <h3 id="about-title">About this template</h3>
+          <p style="color:#3b556a">Use this as a starter for portfolios, side projects, or demos. Replace images and text — it’s that simple.</p>
+          <div style="margin-top:12px;">
+            <strong>Quick facts</strong>
+            <ul style="margin-top:8px;color:#3b556a">
+              <li>Single HTML file</li>
+              <li>No external assets required</li>
+              <li>Works offline</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section id="gallery" aria-label="Gallery" style="margin-top:22px">
+        <h3 style="margin-bottom:12px">Gallery</h3>
+        <div class="gallery">
+          <img src="https://picsum.photos/seed/1/600/400" alt="Sample image 1">
+          <img src="https://picsum.photos/seed/2/600/400" alt="Sample image 2">
+          <img src="https://picsum.photos/seed/3/600/400" alt="Sample image 3">
+          <img src="https://picsum.photos/seed/4/600/400" alt="Sample image 4">
+          <img src="https://picsum.photos/seed/5/600/400" alt="Sample image 5">
+          <img src="https://picsum.photos/seed/6/600/400" alt="Sample image 6">
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div style="flex:1; min-width:240px">
+        <h4 style="margin-bottom:8px">Stay in touch</h4>
+        <small>Sign up for updates or send a quick message.</small>
+      </div>
+
+      <form onsubmit="handleSubmit(event)" aria-label="Contact form" style="min-width:260px;">
+        <input type="text" id="name" placeholder="Your name" required />
+        <input type="email" id="email" placeholder="you@example.com" required />
+        <div style="grid-column:1/-1; display:flex; gap:8px; margin-top:6px">
+          <button type="submit">Send</button>
+          <button type="button" onclick="fillDemo()" style="background:#f1f5f9;color:#27527a;border:0;padding:10px;border-radius:8px;font-weight:700;cursor:pointer">Demo</button>
+        </div>
+      </form>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      // Front-end only: show a friendly message
+      alert('Thanks, ' + (name || 'friend') + '! We received your message from ' + (email || 'your email') + '. (This form is demo-only.)');
+    }
+
+    function fillDemo(){
+      document.getElementById('name').value = 'Joan';
+      document.getElementById('email').value = 'joan@example.com';
+    }
+  </script>
+</body>
+</html>
+
+
